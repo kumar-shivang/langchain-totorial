@@ -11,6 +11,7 @@ filelock==3.16.1
 fsspec==2024.12.0
 gitdb==4.0.11
 GitPython==3.1.43
+grandalf==0.8
 h11==0.14.0
 httpcore==1.0.7
 httpx==0.28.1
@@ -44,6 +45,7 @@ pydantic==2.10.4
 pydantic_core==2.27.2
 pydeck==0.9.1
 Pygments==2.18.0
+pyparsing==3.2.0
 python-dateutil==2.9.0.post0
 python-dotenv==1.0.1
 pytz==2024.2
