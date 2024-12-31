@@ -9,7 +9,7 @@ class State(TypedDict):
     (or messages, not sure yet)
     """
 
-    messages = Annotated[list, add_messages]
+    messages: Annotated[list, add_messages]
     # NOTE:: Updates to messages will be appended to the
     # existing list rather than overwriting it,
     # thanks to the prebuilt add_messages function
