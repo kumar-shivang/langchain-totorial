@@ -10,8 +10,8 @@ class State(TypedDict):
     """
 
     messages = Annotated[list, add_messages]
-    """ NOTE: Updates to messages will be appended to the existing list rather than overwriting it,
-    thanks to the prebuilt add_messages function used with the Annotated syntax. """
+    # NOTE:: Updates to messages will be appended to the existing list rather than overwriting it,
+    # thanks to the prebuilt add_messages function used with the Annotated syntax
 
 
 # NOTE: Each node can receive the current State as input and output an update to the state.
