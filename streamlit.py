@@ -14,3 +14,4 @@ if input_text:
         output = graph.invoke({"messages": [("user", input_text)]})["messages"][-1]
         st.write(output.content)
         # FIX: find a way to check output tool_calls
+        print(output.tool_calls)

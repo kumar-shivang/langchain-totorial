@@ -23,7 +23,7 @@ class BasicToolsNode:
         for tool_call in message.tool_calls:
             tool_result = self.tools_by_name[tool_call["name"]].invoke(
                 tool_call["args"]
-            )
+            )  # go through all tool calls, and invoke them one by one using args
             outputs.append(
                 ToolMessage(
                     content=json.dumps(tool_result),
