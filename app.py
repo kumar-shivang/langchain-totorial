@@ -22,18 +22,16 @@ def model(state: State):  # for testing
 
 graph_builder.add_node("model", model)  # adding the model to the graph
 graph_builder.add_node("tools", tool_node)
-graph_builder.add_edge(START, "model")
+graph_builder.set_entry_point("model")  # NOTE: It's same as add_edge(START,model)
 graph_builder.add_conditional_edges(
     "model",
     route_tools,
     {
-        "tools": "tools",  # NOTE: if route_tools return tools...go to tool_node
+        "tools": "tools",  # NOTE: if route_tools return tools,go to tool_node
         END: END,  # NOTE: if route_tools return END, go to the END node
     },
 )
-graph_builder.add_edge("tools", "model")
-# graph_builder.set_entry_point("model")
-# graph_builder.set_finish_point("model")
+graph_builder.add_edge("tools", "model")  # Output of tools must go back to the model
 graph = graph_builder.compile()
 
 with open("graph.txt", "w") as file:
